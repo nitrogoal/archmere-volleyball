@@ -531,3 +531,8 @@ body .box-player .stat-strip button.stat-cell:hover{border-color:var(--green)}
 body .box-player .stat-strip button.stat-cell.is-selected{background:var(--ink);border-color:var(--ink)}
 body .box-player .stat-strip button.stat-cell.is-selected :is(strong,span){color:#fff}
 .box-explorer .stat-switch{scroll-margin-top:70px}
+/* Box score keeps its original light-green highlight for the chosen stat (player pages use black) */
+body .box-player .stat-strip button.stat-cell.is-selected{background:#dcebdc;border-color:#9bb18d}
+body .box-player .stat-strip button.stat-cell.is-selected strong{color:var(--ink)}
+body .box-player .stat-strip button.stat-cell.is-selected span{color:var(--green)}
+body .box-player .stat-strip button.stat-cell.is-selected{box-shadow:inset 0 -2px #477954;border-color:var(--line)}
