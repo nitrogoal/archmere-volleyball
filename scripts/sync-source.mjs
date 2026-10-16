@@ -137,8 +137,25 @@ async function fetchText(url, tries = 3) {
   throw last;
 }
 function sourceReader(fixtures) {
-  if (!fixtures) return {schedule: () => fetchText(SCHEDULE_URL), game: id => fetchText(`${SOURCE}/game${id}`)};
-  return {schedule: async () => fs.readFileSync(path.join(fixtures, 'schedule.html'), 'utf8'), game: async id => fs.readFileSync(path.join(fixtures, `game${id}.html`), 'utf8')};
+  if (!fixtures) return {schedule: () => fetchText(SCHEDULE_URL), game: id => fetchText(`${SOURCE}/game${id}`), nfhs: url => fetchText(url)};
+  return {schedule: async () => fs.readFileSync(path.join(fixtures, 'schedule.html'), 'utf8'), game: async id => fs.readFileSync(path.join(fixtures, `game${id}.html`), 'utf8'),
+    nfhs: async () => { const p = path.join(fixtures, 'nfhs-padua.html'); if (!fs.existsSync(p)) throw Error('no NFHS fixture'); return fs.readFileSync(p, 'utf8'); }};
+}
+
+// ---------- NFHS Network ----------
+// The official schedule links a school's NFHS Network page; find the varsity Archmere game on that date
+// so live/replay links open the actual broadcast instead of the school's profile.
+export function findNfhsEvent(html, date) {
+  const [m, d, y] = date.split('/').map(Number), pad = n => String(n).padStart(2, '0');
+  const want = `${y < 100 ? 2000 + y : y}-${pad(m)}-${pad(d)}`;
+  for (const card of html.matchAll(/<a href="(\/events\/[a-z0-9-]+\/gam[a-z0-9]+)"[^>]*aria-label="([^"]*)"[\s\S]*?<\/a>/gi)) {
+    if (!/archmere/i.test(card[2])) continue;
+    const body = text(card[0]).toUpperCase();
+    if (/JUNIOR VARSITY|FRESHMAN|\bJV\b/.test(body) || !/VARSITY GIRLS VOLLEYBALL/.test(body)) continue;
+    const dt = (card[0].match(/datetime="([^"]+)"/) || [])[1];
+    if (dt && new Date(dt).toLocaleDateString('en-CA', {timeZone: 'America/New_York'}) === want) return 'https://www.nfhsnetwork.com' + card[1];
+  }
+  return '';
 }
 
 // ---------- Reconciliation ----------
@@ -166,6 +183,8 @@ export function reconcileSchedule(current, src, season) {
     if (r.eventUrl) entry.url = r.eventUrl; else if (prev && 'url' in prev && !r.gameId) entry.url = prev.url;
     if (r.status) entry.status = r.status;
     if (r.streamUrl) entry.streamUrl = r.streamUrl;
+    // Keep a found broadcast link (school pages only list recent games) unless the game moved
+    if (r.streamUrl && prev?.nfhsEventUrl && prev.date === r.date) entry.nfhsEventUrl = prev.nfhsEventUrl;
     out.push(entry);
   }
   old.forEach((s, i) => { if (!used.has(i)) notes.push(`${s.opponent} (${s.date}) no longer on the official schedule; removed`); });
@@ -185,6 +204,15 @@ export async function run({data, fixtures, now = todayET()}) {
   let d = structuredClone(data);
   const rec = reconcileSchedule(d.currentSchedule, src, season);
   report.notes.push(...rec.notes);
+  // Resolve exact NFHS broadcast pages for games that list a stream (non-fatal: falls back to the school page)
+  const nfhsPages = {};
+  for (const e of rec.schedule.filter(e => e.season === season && e.kind === 'Match' && e.streamUrl && !e.nfhsEventUrl)) {
+    try {
+      if (!(e.streamUrl in nfhsPages)) nfhsPages[e.streamUrl] = await read.nfhs(e.streamUrl);
+      const url = findNfhsEvent(nfhsPages[e.streamUrl], e.date);
+      if (url) { e.nfhsEventUrl = url; report.notes.push(`${e.opponent} (${e.date}): broadcast ${url}`); }
+    } catch (err) { report.notes.push(`${e.opponent} (${e.date}): NFHS lookup failed (${err.message}); using the school page`); }
+  }
   const scheduleChanged = JSON.stringify(rec.schedule) !== JSON.stringify(d.currentSchedule);
   d.currentSchedule = rec.schedule;
   if (scheduleChanged) d.scheduleChecked = dayStamp();

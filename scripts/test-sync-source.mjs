@@ -4,7 +4,7 @@ import os from 'node:os';
 import path from 'node:path';
 import assert from 'node:assert/strict';
 import {fileURLToPath} from 'node:url';
-import {parseSchedule, parseGame, run} from './sync-source.mjs';
+import {parseSchedule, parseGame, run, findNfhsEvent} from './sync-source.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const fx = path.join(here, 'fixtures');
@@ -35,6 +35,10 @@ assert.deepEqual(sch.rows.find(r => r.gameId === '404446'), {...sch.rows.find(r 
 assert.equal(sch.rows.find(r => r.opponent === 'MOT Charter HS').date, '10/20/26', 'update icon text ignored');
 assert.equal(sch.rows.find(r => r.opponent === 'Padua Academy').streamUrl, 'https://nfhs-network.pxf.io/padua_academy', 'live stream link captured');
 assert.equal(sch.rows.find(r => r.opponent === 'Conrad School').streamUrl, '');
+// NFHS: pick the varsity Archmere broadcast on that date, not JV/freshman or the school profile
+const nfhs = read('nfhs-padua.html');
+assert.equal(findNfhsEvent(nfhs, '9/26/26'), 'https://www.nfhsnetwork.com/events/padua-academy-wilmington-de/gamca588a86a3');
+assert.equal(findNfhsEvent(nfhs, '9/27/26'), '', 'no game that day');
 
 // 2. Result pages
 const g41 = parseGame(read('game404441.html'));

@@ -44,8 +44,10 @@ document.addEventListener('click', e => {
 });
 
 /* ---------- Live stream ---------- */
-const replayLink = s => s.streamUrl ? `<a class="replay-link" href="${esc(s.streamUrl)}" target="_blank" rel="noopener noreferrer">▶ Watch replay ↗</a>` : '';
-const liveLink = s => s.streamUrl ? `<a class="live-link" href="${esc(s.streamUrl)}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">●</span> Watch live ↗</a>` : '';
+// Prefer the exact broadcast (found by the updater); fall back to the school's NFHS page
+const streamHref = s => s.nfhsEventUrl || s.streamUrl || '';
+const replayLink = s => streamHref(s) ? `<a class="replay-link" href="${esc(streamHref(s))}" target="_blank" rel="noopener noreferrer">▶ Watch replay ↗</a>` : '';
+const liveLink = s => streamHref(s) ? `<a class="live-link" href="${esc(streamHref(s))}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">●</span> Watch live ↗</a>` : '';
 
 /* ---------- Milestones ---------- */
 const STEPS = [250, 500, 750, 1000];
