@@ -155,3 +155,23 @@ function fillUpdated() {
   });
 }
 fillUpdated();
+
+/* ---------- Next scheduled check ----------
+   Mirrors the cron lines in .github/workflows/update-from-source.yml (UTC):
+   '7,27,47 20-23,0-5 * * *' and '37 10-19 * * *'. Keep the two in sync. */
+const CHECK_SLOTS = [{minutes: [7, 27, 47], hours: [20, 21, 22, 23, 0, 1, 2, 3, 4, 5]}, {minutes: [37], hours: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]}];
+function nextCheck(from = new Date()) {
+  const t = new Date(from); t.setUTCSeconds(0, 0);
+  for (let i = 1; i <= 24 * 60; i++) {
+    const c = new Date(t.getTime() + i * 60000);
+    if (CHECK_SLOTS.some(s => s.hours.includes(c.getUTCHours()) && s.minutes.includes(c.getUTCMinutes()))) return c;
+  }
+  return null;
+}
+function fillNextCheck() {
+  const el = document.querySelector('footer [data-next-check]'); if (!el) return;
+  const n = nextCheck(); if (!n) { el.textContent = ''; return; }
+  const sameDay = n.toLocaleDateString('en-US', {timeZone: 'America/New_York'}) === new Date().toLocaleDateString('en-US', {timeZone: 'America/New_York'});
+  el.textContent = ` · Next check ~${sameDay ? '' : 'tomorrow '}${n.toLocaleTimeString('en-US', {timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit'})} ET`;
+}
+fillNextCheck(); setInterval(fillNextCheck, 60000);
