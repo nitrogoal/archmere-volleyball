@@ -7,3 +7,5 @@ Data is a reviewed snapshot, not an automatic Google Sheets feed. `players.json`
 The two unverified Lillian Guzevich Smyrna assists remain excluded. Blank statistics remain null; zero is retained. Player source-row counts are not games played.
 
 All routes use URL fragments so player/game/filter links can be shared without server rewrites. Website data is read-only. Update `dist/data.json`, validate totals and republish to change the public records.
+
+Branding: standalone Auks logo supplied by Archmere's BSN Sports school store: https://cache.bsnsports.com/comp/sls/get/43/3488?f=jpg&sid=3488&ts=1638206562. Displayed in full without cropping.
