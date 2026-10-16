@@ -65,5 +65,748 @@
         "url": "https://www.maxpreps.com/de/wilmington/tatnall-hornets/volleyball/09-10/roster/"
       }
     ]
+  },
+  {
+    "season": 2009,
+    "id": "26399",
+    "name": "Carly McGowan",
+    "raw": "C.McGowan 6-0-0-5",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game26399",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:06:03.436Z",
+    "rows": [
+      {
+        "name": "Carly McGowan",
+        "values": [
+          6,
+          null,
+          null,
+          5,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: last stat got cut off",
+    "evidence": []
+  },
+  {
+    "season": 2009,
+    "id": "43733",
+    "name": "Victoria Grimm",
+    "raw": "Grimm 0-4-0-8-0-0",
+    "reason": "Expected five values; published 6",
+    "source": "https://www.aukssports.com/game43733",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:13:33.336Z",
+    "rows": [
+      {
+        "name": "Victoria Grimm",
+        "values": [
+          null,
+          4,
+          null,
+          8,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: extra 0",
+    "evidence": []
+  },
+  {
+    "season": 2010,
+    "id": "42139",
+    "name": "Brooke Ruditys",
+    "raw": "Ruditys 0-0-0-5",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game42139",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:14:06.834Z",
+    "rows": [
+      {
+        "name": "Brooke Ruditys",
+        "values": [
+          null,
+          null,
+          null,
+          5,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: just digs",
+    "evidence": []
+  },
+  {
+    "season": 2010,
+    "id": "42248",
+    "name": "Mary Tobin",
+    "raw": "Tobin 2-0-0-0",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game42248",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:14:28.582Z",
+    "rows": [
+      {
+        "name": "Mary Tobin",
+        "values": [
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: just kills",
+    "evidence": []
+  },
+  {
+    "season": 2010,
+    "id": "42355",
+    "name": "Madeline Cowperthwaite",
+    "raw": "Cowperthwaite:0-5--0-4-0",
+    "reason": "Extra separator makes category positions uncertain",
+    "source": "https://www.aukssports.com/game42355",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:14:52.152Z",
+    "rows": [
+      {
+        "name": "Madeline Cowperthwaite",
+        "values": [
+          null,
+          5,
+          null,
+          4,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: extra -",
+    "evidence": []
+  },
+  {
+    "season": 2010,
+    "id": "42394",
+    "name": "Patreece Spence",
+    "raw": "Patreece Spence (9-3-7-0)",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game42394",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:15:19.020Z",
+    "rows": [
+      {
+        "name": "Patreece Spence",
+        "values": [
+          9,
+          3,
+          7,
+          null,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: cut off stat",
+    "evidence": []
+  },
+  {
+    "season": 2010,
+    "id": "42394",
+    "name": "Megan Carney",
+    "raw": "Megan Carney (3-0-4-0)",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game42394",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:15:38.467Z",
+    "rows": [
+      {
+        "name": "Megan Carney",
+        "values": [
+          3,
+          null,
+          4,
+          null,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: cut off stat",
+    "evidence": []
+  },
+  {
+    "season": 2010,
+    "id": "42394",
+    "name": "Emily Gerard",
+    "raw": "Emily Gerard (9-0-2-0)",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game42394",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:15:57.291Z",
+    "rows": [
+      {
+        "name": "Emily Gerard",
+        "values": [
+          9,
+          null,
+          2,
+          null,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: cut off",
+    "evidence": []
+  },
+  {
+    "season": 2010,
+    "id": "42394",
+    "name": "Carly McGowan",
+    "raw": "Carly McGowan (5-0-1-0)",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game42394",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:16:13.626Z",
+    "rows": [
+      {
+        "name": "Carly McGowan",
+        "values": [
+          5,
+          null,
+          1,
+          null,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: cut off",
+    "evidence": []
+  },
+  {
+    "season": 2011,
+    "id": "60547",
+    "name": "Colleen Kirkwood",
+    "raw": "Kirkwood 3-0-0-0-1-0",
+    "reason": "Expected five values; published 6",
+    "source": "https://www.aukssports.com/game60547",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:16:34.339Z",
+    "rows": [
+      {
+        "name": "Colleen Kirkwood",
+        "values": [
+          3,
+          null,
+          null,
+          1,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: weird",
+    "evidence": []
+  },
+  {
+    "season": 2011,
+    "id": "58887",
+    "name": "Megan Carney",
+    "raw": "Megan Carney 5-0-2-10",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game58887",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:17:02.293Z",
+    "rows": [
+      {
+        "name": "Megan Carney",
+        "values": [
+          5,
+          null,
+          2,
+          10,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: cut off",
+    "evidence": []
+  },
+  {
+    "season": 2012,
+    "id": "66220",
+    "name": "Amanda Olsen",
+    "raw": "Olsen 2-0-1-0",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game66220",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:17:14.522Z",
+    "rows": [
+      {
+        "name": "Amanda Olsen",
+        "values": [
+          2,
+          null,
+          1,
+          null,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: cut off",
+    "evidence": []
+  },
+  {
+    "season": 2013,
+    "id": "96240",
+    "name": "Madeline Kelly",
+    "raw": "Maddie Kelly 3-0--0-0-0",
+    "reason": "Extra separator makes category positions uncertain",
+    "source": "https://www.aukssports.com/game96240",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:17:30.223Z",
+    "rows": [
+      {
+        "name": "Madeline Kelly",
+        "values": [
+          3,
+          null,
+          null,
+          null,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: extra -",
+    "evidence": []
+  },
+  {
+    "season": 2013,
+    "id": "96925",
+    "name": "Madeline Kelly",
+    "raw": "Kelly",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game96925",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:18:42.307Z",
+    "rows": [
+      {
+        "name": "Madeline Kelly",
+        "values": [
+          14,
+          2,
+          1,
+          30,
+          1
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: shows in see results",
+    "evidence": []
+  },
+  {
+    "season": 2013,
+    "id": "118914",
+    "name": "Emily Dentinger",
+    "raw": "Dentinger 1--0-3-2-0",
+    "reason": "Extra separator makes category positions uncertain",
+    "source": "https://www.aukssports.com/game118914",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:18:59.560Z",
+    "rows": [
+      {
+        "name": "Emily Dentinger",
+        "values": [
+          1,
+          null,
+          3,
+          2,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: extra -",
+    "evidence": []
+  },
+  {
+    "season": 2016,
+    "id": "161310",
+    "name": "Zoe Akoto",
+    "raw": "Akoto",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game161310",
+    "status": "resolved",
+    "decision": "exclude",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:19:25.906Z",
+    "rows": [],
+    "explanation": "User review confirmed this entry should remain excluded from numeric totals.",
+    "evidence": []
+  },
+  {
+    "season": 2016,
+    "id": "161338",
+    "name": "Alexis Kelly",
+    "raw": "Kelly, L (",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game161338",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:19:53.633Z",
+    "rows": [
+      {
+        "name": "Alexis Kelly",
+        "values": [
+          10,
+          null,
+          4,
+          16,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: shows on results",
+    "evidence": []
+  },
+  {
+    "season": 2016,
+    "id": "184371",
+    "name": "Julia Kochie",
+    "raw": "Kochie 5-0",
+    "reason": "Expected five values; published 2",
+    "source": "https://www.aukssports.com/game184371",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:20:29.154Z",
+    "rows": [
+      {
+        "name": "Julia Kochie",
+        "values": [
+          14,
+          3,
+          2,
+          15,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2016,
+    "id": "184738",
+    "name": "Julia Kochie",
+    "raw": "Kochie",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game184738",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:20:48.826Z",
+    "rows": [
+      {
+        "name": "Julia Kochie",
+        "values": [
+          14,
+          null,
+          null,
+          8,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2016,
+    "id": "185123",
+    "name": "Alexis Kelly",
+    "raw": "Kelly,L 0",
+    "reason": "Expected five values; published 1",
+    "source": "https://www.aukssports.com/game185123",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:21:33.362Z",
+    "rows": [
+      {
+        "name": "Alexis Kelly",
+        "values": [
+          15,
+          null,
+          3,
+          12,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2016,
+    "id": "185123",
+    "name": "Julia Kochie",
+    "raw": "Kochie",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game185123",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:21:53.827Z",
+    "rows": [
+      {
+        "name": "Julia Kochie",
+        "values": [
+          12,
+          2,
+          1,
+          14,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2017,
+    "id": "181584",
+    "name": "Hannah Wright",
+    "raw": "Hannah Wright 01-0-4-1",
+    "reason": "Expected five values; published 4",
+    "source": "https://www.aukssports.com/game181584",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:22:22.084Z",
+    "rows": [
+      {
+        "name": "Hannah Wright",
+        "values": [
+          null,
+          1,
+          null,
+          4,
+          1
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: missing -",
+    "evidence": []
+  },
+  {
+    "season": 2018,
+    "id": "206066",
+    "name": "Julia Kochie",
+    "raw": "Kochie",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game206066",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:22:43.318Z",
+    "rows": [
+      {
+        "name": "Julia Kochie",
+        "values": [
+          13,
+          2,
+          null,
+          14,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2018,
+    "id": "209261",
+    "name": "Lauren Edmiston",
+    "raw": "Edmiston",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game209261",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:23:03.744Z",
+    "rows": [
+      {
+        "name": "Lauren Edmiston",
+        "values": [
+          12,
+          null,
+          11,
+          2,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2019,
+    "id": "228617",
+    "name": "Julia Kochie",
+    "raw": "Kochie",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game228617",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:23:25.566Z",
+    "rows": [
+      {
+        "name": "Julia Kochie",
+        "values": [
+          13,
+          4,
+          2,
+          10,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2019,
+    "id": "229811",
+    "name": "Julia Kochie",
+    "raw": "Kochie",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game229811",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:24:03.914Z",
+    "rows": [
+      {
+        "name": "Julia Kochie",
+        "values": [
+          15,
+          null,
+          4,
+          13,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2019,
+    "id": "253550",
+    "name": "Julia Kochie",
+    "raw": "Kochie",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game253550",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:24:21.382Z",
+    "rows": [
+      {
+        "name": "Julia Kochie",
+        "values": [
+          20,
+          3,
+          3,
+          11,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2019,
+    "id": "254002",
+    "name": "Julia Kochie",
+    "raw": "Kochie",
+    "reason": "Player named without a usable stat line",
+    "source": "https://www.aukssports.com/game254002",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:24:41.820Z",
+    "rows": [
+      {
+        "name": "Julia Kochie",
+        "values": [
+          22,
+          1,
+          5,
+          26,
+          null
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: results",
+    "evidence": []
+  },
+  {
+    "season": 2020,
+    "id": "273668",
+    "name": "Autumn Richardson-Peters",
+    "raw": "Autumn Richardson-Peters 0-4-0-0-3-0",
+    "reason": "Expected five values; published 6",
+    "source": "https://www.aukssports.com/game273668",
+    "status": "resolved",
+    "decision": "correction",
+    "resolvedAt": "2026-10-16",
+    "reviewedAt": "2026-10-16T14:25:14.847Z",
+    "rows": [
+      {
+        "name": "Autumn Richardson-Peters",
+        "values": [
+          null,
+          4,
+          null,
+          null,
+          3
+        ]
+      }
+    ],
+    "explanation": "User-reviewed correction imported from the review export. Unknown categories remain unreported. Review note: extra -0",
+    "evidence": []
   }
 ]

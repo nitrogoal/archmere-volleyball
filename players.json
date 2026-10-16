@@ -95,10 +95,10 @@
     "year": 2018,
     "note": "Expected from published grades",
     "values": [
-      329,
+      354,
       51,
-      111,
-      242,
+      118,
+      270,
       17
     ],
     "id": "alexis-kelly"
@@ -134,9 +134,9 @@
     "year": 2014,
     "note": "Expected from published grades",
     "values": [
-      173,
+      175,
       3,
-      41,
+      42,
       27,
       9
     ],
@@ -213,10 +213,10 @@
     "note": "Expected from published grades",
     "values": [
       14,
-      116,
+      120,
       0,
       796,
-      88
+      91
     ],
     "id": "autumn-richardson-peters"
   },
@@ -293,7 +293,7 @@
       72,
       57,
       7,
-      348,
+      353,
       4
     ],
     "id": "brooke-ruditys"
@@ -316,10 +316,10 @@
     "year": 2012,
     "note": "Expected from published grades",
     "values": [
-      179,
+      190,
       11,
-      39,
-      84,
+      40,
+      89,
       13
     ],
     "id": "carly-mcgowan"
@@ -420,10 +420,10 @@
     "year": 2013,
     "note": "Expected from published grades",
     "values": [
-      25,
+      28,
       21,
       10,
-      14,
+      15,
       4
     ],
     "id": "colleen-kirkwood"
@@ -498,10 +498,10 @@
     "year": 2015,
     "note": "Expected from published grades",
     "values": [
-      113,
+      114,
       1,
-      55,
-      44,
+      58,
+      46,
       19
     ],
     "id": "emily-dentinger"
@@ -511,9 +511,9 @@
     "year": 2013,
     "note": "Expected from published grades",
     "values": [
-      226,
+      235,
       2,
-      45,
+      47,
       20,
       15
     ],
@@ -616,10 +616,10 @@
     "note": "Expected from published grades",
     "values": [
       33,
-      86,
+      87,
       0,
-      857,
-      80
+      861,
+      81
     ],
     "id": "hannah-wright"
   },
@@ -719,10 +719,10 @@
     "year": 2020,
     "note": "Expected from published grades",
     "values": [
-      643,
-      118,
-      93,
-      512,
+      766,
+      133,
+      110,
+      623,
       127
     ],
     "id": "julia-kochie"
@@ -875,10 +875,10 @@
     "year": 2020,
     "note": "Expected from published grades",
     "values": [
-      291,
+      303,
       3,
-      135,
-      55,
+      146,
+      57,
       3
     ],
     "id": "lauren-edmiston"
@@ -928,9 +928,9 @@
     "note": "Expected from published grades",
     "values": [
       8,
-      18,
+      23,
       3,
-      67,
+      71,
       49
     ],
     "id": "madeline-cowperthwaite"
@@ -979,11 +979,11 @@
     "year": 2014,
     "note": "Expected from published grades",
     "values": [
-      82,
-      34,
-      1,
-      292,
-      11
+      99,
+      36,
+      2,
+      322,
+      12
     ],
     "id": "madeline-kelly"
   },
@@ -1018,7 +1018,7 @@
     "year": 2013,
     "note": "Expected from published grades",
     "values": [
-      208,
+      210,
       21,
       15,
       110,
@@ -1031,10 +1031,10 @@
     "year": 2012,
     "note": "Expected from published grades",
     "values": [
-      97,
+      105,
       5,
-      66,
-      15,
+      72,
+      25,
       0
     ],
     "id": "megan-carney"
@@ -1122,9 +1122,9 @@
     "year": 2011,
     "note": "Graduation year corrected to 2011 by the user on October 16, 2026.",
     "values": [
-      448,
-      45,
-      47,
+      457,
+      48,
+      54,
       360,
       3
     ],
@@ -1305,9 +1305,9 @@
     "note": "Expected from published grades",
     "values": [
       10,
-      20,
+      24,
       0,
-      155,
+      163,
       0
     ],
     "id": "victoria-grimm"

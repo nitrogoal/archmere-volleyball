@@ -12,10 +12,14 @@ games=d['games']
 resolved=json.loads((root/'corrections.json').read_text(encoding='utf-8')) if (root/'corrections.json').exists() else []
 for correction in resolved:
     game=next(g for g in games if g['id']==correction['id'])
-    stats=[s for s in stats if s['id']!=game['id']]
     for row in correction['rows']:
-        stats.append({**{k:game[k] for k in ['season','id','date','opponent','phase']},**row,'method':'Written summary','note':'Resolved team-label reversal on October 16, 2026; stat order verified against same-season official summaries.','source':game['url']})
-    game['type']='Written summary'
+        existing=next((s for s in stats if s['id']==game['id'] and s['name']==row['name']),None)
+        if existing:
+            existing['values']=row['values']
+            existing['note']=correction['explanation']
+        else:
+            stats.append({**{k:game[k] for k in ['season','id','date','opponent','phase']},**row,'method':'Written summary','note':correction['explanation'],'source':game['url']})
+    if correction['rows']: game['type']='Written summary'
     d['issues']=[i for i in d['issues'] if not (i['id']==correction['id'] and i['raw']==correction['raw'])]
 for g in games:g['entries']=sum(s['id']==g['id'] for s in stats)
 out={'updated':'October 16, 2026','players':players,'games':games,'stats':stats,'roster':d['roster'],'issues':d['issues'],'scheduleOnly':d['scheduleOnly']}
