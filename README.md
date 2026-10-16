@@ -9,3 +9,5 @@ The two unverified Lillian Guzevich Smyrna assists remain excluded. Blank statis
 All routes use URL fragments so player/game/filter links can be shared without server rewrites. Website data is read-only. Update `dist/data.json`, validate totals and republish to change the public records.
 
 Branding: standalone Auks logo supplied by Archmere's BSN Sports school store: https://cache.bsnsports.com/comp/sls/get/43/3488?f=jpg&sid=3488&ts=1638206562. Displayed in full without cropping.
+
+Player-page update: game logs now show verified opponent logos from the MaxPreps Delaware school directory. Exact name mappings, asset URLs and source pages are retained in dist/opponents.json. Schools without a verified image use initials. Marks are current identity references, not historical-season certifications.
