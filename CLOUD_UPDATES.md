@@ -1,3 +1,5 @@
+> **Superseded October 16, 2026.** Updates now run in GitHub Actions (`update-from-source.yml`) and the site is hosted on GitHub Pages; see README.md. The OpenAI Sites automation is disabled and must stay off so two updaters never compete. This file is kept for history.
+
 # Archmere varsity results updates
 
 This site is a static archive. Update the snapshot in the existing source repository and publish only when verified results change. Never create another site or change sharing/DNS. Read the Sites skill and use its source helper to open the latest linked repository. Everything needed is in this repository; do not depend on the original Windows checkout, Downloads, or sibling archive files. Do not run prepare.py: it is a historical rebuild tool, not the live updater.

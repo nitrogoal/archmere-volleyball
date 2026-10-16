@@ -47,7 +47,7 @@ if(process.argv[1]&&path.resolve(process.argv[1])===fileURLToPath(import.meta.ur
    result.data.updated=new Date().toLocaleDateString('en-US',{timeZone:'America/New_York',month:'long',day:'numeric',year:'numeric'});
    fs.writeFileSync(path.join(root,'dist/data.json'),JSON.stringify(result.data));
    fs.writeFileSync(path.join(root,'players.json'),JSON.stringify(result.data.players,null,2));
-   const html=path.join(root,'dist/index.html');fs.writeFileSync(html,fs.readFileSync(html,'utf8').replace(/Independent record book · Updated [^<]+/,'Independent record book · Updated '+result.data.updated));
+   const html=path.join(root,'dist/index.html');fs.writeFileSync(html,fs.readFileSync(html,'utf8').replace(/(Updated )[A-Z][a-z]+ \d{1,2}, \d{4}/,'$1'+result.data.updated));
   }
  }
 }

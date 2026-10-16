@@ -1,11 +1,13 @@
 name: Deploy site
 
 # Publishes dist/ to GitHub Pages after the data checks pass.
+# Also called by the updater right after it commits new data.
 on:
   push:
     branches: [main]
     paths: ['dist/**', 'players.json', 'corrections.json', 'scripts/**', '.github/workflows/deploy-pages.yml']
   workflow_dispatch:
+  workflow_call:
 
 permissions:
   contents: read
@@ -22,11 +24,14 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
       - run: node --check dist/app.js
       - run: node scripts/test-update-results.mjs
+      - run: node scripts/test-sync-source.mjs
       - run: node scripts/update-results.mjs --validate
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

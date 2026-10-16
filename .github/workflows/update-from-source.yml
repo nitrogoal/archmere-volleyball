@@ -1,0 +1,113 @@
+name: Update from official source
+
+# Reads the official AuksSports schedule and result pages, imports only
+# verified changes, commits them and republishes. Ambiguous data opens a
+# "Needs review" issue; a failed run opens an "Updater failing" issue.
+on:
+  schedule:
+    - cron: '23 */3 * * *'   # every 3 hours
+    - cron: '53 0-4 * * *'   # hourly 8:53pm-12:53am Eastern (EDT), after evening matches
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: updater
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Read official source and import verified changes
+        run: node scripts/sync-source.mjs --apply --report "$RUNNER_TEMP/report.json"
+
+      - name: Check data
+        run: |
+          node --check dist/app.js
+          node scripts/test-update-results.mjs
+          node scripts/update-results.mjs --validate
+
+      - name: Commit changes
+        id: commit
+        run: |
+          if git diff --quiet; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          games=$(node -e "const r=require(process.argv[1]);process.stdout.write(r.changedGames.join(', '))" "$RUNNER_TEMP/report.json")
+          git config user.name "auksvb-updater"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dist/data.json dist/index.html players.json
+          git commit -m "Update from official source${games:+: games $games}"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Keep schedule alive in the off-season
+        # GitHub pauses scheduled workflows after 60 days without repository activity.
+        if: steps.commit.outputs.changed == 'false'
+        run: |
+          last=$(git log -1 --format=%ct)
+          if [ $(( $(date +%s) - last )) -gt $(( 45 * 86400 )) ]; then
+            date -u +%FT%TZ > .github/heartbeat
+            git config user.name "auksvb-updater"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add .github/heartbeat && git commit -m "Updater heartbeat" && git push
+          fi
+
+      - name: Raise review items
+        run: |
+          node -e "
+            const r=require(process.argv[1]);
+            const lines=r.review.map(i=>'- [ ] '+i.text+' <!-- '+i.key+' -->');
+            require('fs').writeFileSync(process.argv[2], lines.join('\n'));
+          " "$RUNNER_TEMP/report.json" "$RUNNER_TEMP/review.md"
+          [ -s "$RUNNER_TEMP/review.md" ] || exit 0
+          num=$(gh issue list --state open --label needs-review --json number -q '.[0].number')
+          if [ -z "$num" ]; then
+            gh label create needs-review --color d93f0b --description "Updater found something it will not guess" 2>/dev/null || true
+            { echo "@${{ github.repository_owner }} the updater found source data it will not import without a person checking it. Everything else was imported normally."; echo; cat "$RUNNER_TEMP/review.md"; echo; echo "Run: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"; } > "$RUNNER_TEMP/body.md"
+            gh issue create --title "Results need review" --label needs-review --body-file "$RUNNER_TEMP/body.md"
+          else
+            body=$(gh issue view "$num" --json body,comments -q '[.body, .comments[].body] | join("\n")')
+            new=$(while IFS= read -r line; do key=$(echo "$line" | grep -o '<!-- .* -->'); echo "$body" | grep -qF "$key" || echo "$line"; done < "$RUNNER_TEMP/review.md")
+            [ -z "$new" ] || gh issue comment "$num" --body "$(printf 'New items:\n\n%s\n\nRun: %s' "$new" "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}")"
+          fi
+
+      - name: Close failure alert after recovery
+        if: success()
+        run: |
+          for n in $(gh issue list --state open --label updater-failing --json number -q '.[].number'); do
+            gh issue close "$n" --comment "Recovered: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          done
+
+      - name: Alert on failure
+        if: failure()
+        run: |
+          run="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          num=$(gh issue list --state open --label updater-failing --json number -q '.[0].number')
+          if [ -z "$num" ]; then
+            gh label create updater-failing --color b60205 --description "Scheduled update did not complete" 2>/dev/null || true
+            gh issue create --title "Updater failing" --label updater-failing --body "@${{ github.repository_owner }} the scheduled update could not finish, so the site is still showing the last good data. Details: $run"
+          else
+            last=$(gh issue view "$num" --json comments,createdAt -q '(.comments | last | .createdAt) // .createdAt')
+            if [ $(( $(date +%s) - $(date -d "$last" +%s) )) -gt 43200 ]; then gh issue comment "$num" --body "Still failing: $run"; fi
+          fi
+
+  deploy:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy-pages.yml
