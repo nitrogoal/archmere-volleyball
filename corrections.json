@@ -1,0 +1,69 @@
+[
+  {
+    "season": 2009,
+    "id": "25440",
+    "name": "Team labels disputed",
+    "raw": "Individual Stats:\nARCHMERE: Togo 0-0-0-15-0; Skibicki 0-0-2-3-13; Schneider 4-2-0-8-0; Bowe 6-3-0-10-0.\nTATNALL: Eppes 10-3-1-12-0; Spence 4-1-3-7-0; Kuhn 4-2-0-0-0; McGowan 1-0-4-2-0.\nPhotos by Cindy Knorr",
+    "reason": "Archmere and Tatnall labels appear reversed; all individual values withheld pending correction.",
+    "source": "https://www.aukssports.com/game25440",
+    "status": "resolved",
+    "resolvedAt": "2026-10-16",
+    "rows": [
+      {
+        "name": "Marissa Eppes",
+        "values": [
+          10,
+          3,
+          1,
+          12,
+          0
+        ]
+      },
+      {
+        "name": "Patreece Spence",
+        "values": [
+          4,
+          1,
+          3,
+          7,
+          0
+        ]
+      },
+      {
+        "name": "Elizabeth Kuhn",
+        "values": [
+          4,
+          2,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "name": "Carly McGowan",
+        "values": [
+          1,
+          0,
+          4,
+          2,
+          0
+        ]
+      }
+    ],
+    "explanation": "Team headings are reversed: Togo, Skibicki, Schneider and Bowe are Tatnall players. The Archmere rows are Eppes (Marissa), Spence (Patreece), Kuhn (Elizabeth/Lizzy) and McGowan (Carly). Applied in kills, aces, blocks, digs, assists order, explicitly keyed in the September 18 and September 29, 2009 official summaries. The disputed page itself does not print a stat key. Original values are unchanged; only team attribution is corrected. These four published rows may not be a complete team box score.",
+    "evidence": [
+      {
+        "label": "September 18 stat key",
+        "url": "https://www.aukssports.com/game25518"
+      },
+      {
+        "label": "September 29 stat key and player names",
+        "url": "https://www.aukssports.com/game25887"
+      },
+      {
+        "label": "Tatnall 2009 roster",
+        "url": "https://www.maxpreps.com/de/wilmington/tatnall-hornets/volleyball/09-10/roster/"
+      }
+    ]
+  }
+]
