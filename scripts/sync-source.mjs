@@ -16,7 +16,8 @@ export const SOURCE = 'https://www.aukssports.com';
 export const SCHEDULE_URL = SOURCE + '/page9857';
 const UA = 'Mozilla/5.0 (compatible; auksvb-updater/1.0; +https://auksvb.com)';
 const STAT_COLUMNS = ['Kills', 'Aces', 'Blocks', 'Digs', 'Assists'];
-const RECHECK_DAYS = 21;
+// Complete box scores are re-read for a few days in case of late corrections; score-only games always
+const RECHECK_DAYS = 3;
 
 // ---------- HTML helpers (the source is server-rendered tables) ----------
 const decode = s => s.replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&#39;|&#039;|&rsquo;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, '<').replace(/&gt;/g, '>');

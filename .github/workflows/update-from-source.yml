@@ -5,8 +5,8 @@ name: Update from official source
 # "Needs review" issue; a failed run opens an "Updater failing" issue.
 on:
   schedule:
-    - cron: '23 */3 * * *'   # every 3 hours
-    - cron: '53 0-4 * * *'   # hourly 8:53pm-12:53am Eastern (EDT), after evening matches
+    - cron: '7,27,47 20-23,0-5 * * *'   # every 20 min, ~4pm-2am Eastern (game nights)
+    - cron: '37 10-19 * * *'   # hourly during the day
   workflow_dispatch:
 
 permissions:
