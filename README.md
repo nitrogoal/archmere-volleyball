@@ -11,3 +11,5 @@ All routes use URL fragments so player/game/filter links can be shared without s
 Branding: standalone Auks logo supplied by Archmere's BSN Sports school store: https://cache.bsnsports.com/comp/sls/get/43/3488?f=jpg&sid=3488&ts=1638206562. Displayed in full without cropping.
 
 Player-page update: game logs now show verified opponent logos from the MaxPreps Delaware school directory. Exact name mappings, asset URLs and source pages are retained in dist/opponents.json. Schools without a verified image use initials. Marks are current identity references, not historical-season certifications.
+
+Logo coverage update: all 34 opponents now have school marks. Added official sports-site references and full-mark display windows for Padua, Ursuline, Delmarva Christian and Campus Community; replaced low-resolution thumbnails with original assets. Opponent logos appear in the shared game cards on Games, Home and season pages, as well as player logs. Exact per-school sources and display bounds are in dist/opponents.json.
