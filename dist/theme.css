@@ -536,3 +536,6 @@ body .box-player .stat-strip button.stat-cell.is-selected{background:#dcebdc;bor
 body .box-player .stat-strip button.stat-cell.is-selected strong{color:var(--ink)}
 body .box-player .stat-strip button.stat-cell.is-selected span{color:var(--green)}
 body .box-player .stat-strip button.stat-cell.is-selected{box-shadow:inset 0 -2px #477954;border-color:var(--line)}
+/* Next-game banner stripe lives in the rounded, clipped art layer so it follows the corners */
+.feature:after{display:none}
+.f-art:after{content:'';position:absolute;left:0;right:0;bottom:0;height:7px;background:repeating-linear-gradient(-45deg,var(--ink) 0 10px,transparent 10px 20px)}
