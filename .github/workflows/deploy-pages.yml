@@ -33,6 +33,8 @@ jobs:
       - run: node scripts/test-update-results.mjs
       - run: node scripts/test-sync-source.mjs
       - run: node scripts/update-results.mjs --validate
+      - name: Build calendar feed
+        run: node scripts/build-ics.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

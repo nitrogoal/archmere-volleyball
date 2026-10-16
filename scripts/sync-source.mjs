@@ -71,6 +71,8 @@ export function parseSchedule(html) {
       kind: isPractice ? 'Team event' : isScrimmage || code === 'S' ? 'Scrimmage' : code === 'T' ? 'Tournament' : 'Match',
       gameId: linkId || '',
       eventUrl: scrimmageLink ? SOURCE + scrimmageLink : '',
+      // Live stream link (NFHS Network) shown in the date cell when a broadcast is listed
+      streamUrl: (r[c.Date].html.match(/href=['"](https:\/\/[^'"]*nfhs[^'"]*)['"]/i) || [])[1] || '',
       result: r[c['W/L']].text,
       score: r[c.Score].text.replace(/\s/g, ''),
     });
@@ -163,6 +165,7 @@ export function reconcileSchedule(current, src, season) {
     if (r.gameId) entry.gameId = r.gameId;
     if (r.eventUrl) entry.url = r.eventUrl; else if (prev && 'url' in prev && !r.gameId) entry.url = prev.url;
     if (r.status) entry.status = r.status;
+    if (r.streamUrl) entry.streamUrl = r.streamUrl;
     out.push(entry);
   }
   old.forEach((s, i) => { if (!used.has(i)) notes.push(`${s.opponent} (${s.date}) no longer on the official schedule; removed`); });

@@ -33,6 +33,8 @@ assert.equal(sch.rows.filter(r => r.kind === 'Scrimmage').length, 3);
 assert.equal(sch.rows.filter(r => r.kind === 'Team event').length, 1);
 assert.deepEqual(sch.rows.find(r => r.gameId === '404446'), {...sch.rows.find(r => r.gameId === '404446'), date: '10/15/26', result: 'W', score: '3-1', homeAway: 'A'});
 assert.equal(sch.rows.find(r => r.opponent === 'MOT Charter HS').date, '10/20/26', 'update icon text ignored');
+assert.equal(sch.rows.find(r => r.opponent === 'Padua Academy').streamUrl, 'https://nfhs-network.pxf.io/padua_academy', 'live stream link captured');
+assert.equal(sch.rows.find(r => r.opponent === 'Conrad School').streamUrl, '');
 
 // 2. Result pages
 const g41 = parseGame(read('game404441.html'));
