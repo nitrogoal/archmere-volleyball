@@ -1,0 +1,48 @@
+name: Probe official source
+
+# Manual check that a GitHub-hosted runner can read the official schedule
+# and a result page as plain HTML. Read-only: changes nothing in the repo.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Fetch pages
+        run: |
+          set -u
+          ua="Mozilla/5.0 (compatible; auksvb-updater/1.0; +https://auksvb.com)"
+          mkdir -p snap
+          ok=1
+          for name in schedule:page9857 game:game404441; do
+            file="${name%%:*}"; path="${name#*:}"
+            code=$(curl -sS -L --retry 2 --retry-delay 5 -A "$ua" -o "snap/$file.html" -w '%{http_code}' "https://www.aukssports.com/$path" || echo 000)
+            size=$(wc -c < "snap/$file.html" 2>/dev/null || echo 0)
+            echo "$path -> HTTP $code, $size bytes"
+            echo "| $path | $code | $size |" >> rows.md
+            [ "$code" = 200 ] || ok=0
+          done
+          check() { if grep -qi "$2" "snap/$1.html"; then echo "| $1 contains \`$2\` | yes |"; else echo "| $1 contains \`$2\` | **no** |"; echo MISS >> miss; fi; }
+          {
+            echo "## Source fetch from GitHub runner"
+            echo "| Page | HTTP | Bytes |"; echo "|---|---|---|"; cat rows.md
+            echo; echo "| Marker | Found |"; echo "|---|---|"
+            check schedule "2026/2027"
+            check schedule "MOT Charter"
+            check schedule "game404446"
+            check game "Kills"
+            check game "Appoquinimink"
+          } >> "$GITHUB_STEP_SUMMARY"
+          [ "$ok" = 1 ] && [ ! -f miss ] || { echo "Probe failed"; exit 1; }
+      - name: Keep snapshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-snapshots
+          path: snap/
+          retention-days: 7
