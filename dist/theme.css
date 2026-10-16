@@ -520,3 +520,8 @@ body .record-ranking .alumni-mark small{font-size:6px}
 body .record-ranking .leader-row{grid-template-columns:42px 56px minmax(0,1fr) auto}
 @media(max-width:760px){body .record-ranking .leader-row{grid-template-columns:34px 52px minmax(0,1fr) auto;gap:12px;padding:16px 12px}}
 body .game .res a.replay-link.alt{color:var(--muted);font-weight:500}
+/* Records: same slight tilt as the Players tab badges */
+body .record-ranking .jersey-mark{transform:rotate(-3deg)}
+/* Jersey night: rounded green tag with white jersey trim inside the edges */
+.theme-jersey{background:#0f6b3a;border-radius:4px;box-shadow:inset 0 0 0 2px #0f6b3a,inset 0 0 0 4px #fff;padding-left:12px!important;padding-right:12px!important}
+.feature .theme-jersey,.n-tags .theme-jersey{border-radius:999px}
