@@ -102,7 +102,8 @@ document.addEventListener('submit',e=>{const form=e.target.closest('.review-form
 const REPO='nitrogoal/archmere-volleyball',UPDATER='update-from-source.yml';
 const todayET=()=>serial(new Date().toLocaleDateString('en-US',{timeZone:'America/New_York'}));
 const offStatus=s=>/^(postponed|cancel+ed)$/i.test(s.status||'');
-const wl=(result,score)=>`<b class="wl ${result==='W'?'win':'loss'}">${esc(result)}</b> <span>${esc(score)}</span>`;
+// Same score + W/L badge as the game cards.
+const wl=(result,score)=>`${esc(score)} <span class="badge ${result==='L'?'loss':''}">${esc(result)}</span>`;
 let lastCheck;
 async function sourceChecked(){if(lastCheck!==undefined)return lastCheck;try{const c=JSON.parse(sessionStorage.getItem('auksvb-checked')||'null');if(c&&Date.now()-c.at<6e5)return lastCheck=c.when}catch{}try{const r=await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/${UPDATER}/runs?status=success&per_page=1`);const when=r.ok?(await r.json()).workflow_runs?.[0]?.updated_at||null:null;try{sessionStorage.setItem('auksvb-checked',JSON.stringify({at:Date.now(),when}))}catch{}return lastCheck=when}catch{return lastCheck=null}}
 function fillChecked(){const el=$('[data-source-checked]');if(!el)return;sourceChecked().then(when=>{if(!when||!el.isConnected)return;const d=new Date(when),same=d.toLocaleDateString('en-US',{timeZone:'America/New_York'})===new Date().toLocaleDateString('en-US',{timeZone:'America/New_York'});el.textContent='Source checked '+(same?'today':d.toLocaleDateString('en-US',{timeZone:'America/New_York',month:'short',day:'numeric'}))+', '+d.toLocaleTimeString('en-US',{timeZone:'America/New_York',hour:'numeric',minute:'2-digit'})+' · ';el.hidden=false})}
