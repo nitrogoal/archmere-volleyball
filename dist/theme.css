@@ -287,3 +287,6 @@ body .match-scorecard{background:#fff;border:1px solid var(--line);border-radius
 body .team-score{font-family:var(--display)}
 body .winner-label{background:var(--green);color:#fff;border-radius:4px}
 @media(max-width:760px){body .result-heading{padding:26px 16px 22px}}
+/* Gradient numerals: paint area extends past the tight line box so glyph tops/bottoms aren't clipped */
+.record b,.next .n-count,.f-count b,.jersey,.pg-head .meta b,body :is(.roster-year,.directory-seal,.archive-stamp) strong{padding-top:.14em;padding-bottom:.12em;margin-top:-.14em;margin-bottom:-.12em}
+.next .n-count{align-self:center}
