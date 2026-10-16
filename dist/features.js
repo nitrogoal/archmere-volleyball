@@ -133,3 +133,25 @@ document.addEventListener('keydown', e => {
   if (e.key === '/' && !/input|select|textarea/i.test(document.activeElement.tagName)) { e.preventDefault(); openSearch(); }
   if (e.key === 'Enter' && e.target.id === 'qs-input') { const a = $('#qs-results a'); if (a) { location.hash = a.getAttribute('href'); closeSearch(); } }
 });
+
+/* ---------- Exact "updated" time ----------
+   The time of the last commit that changed dist/data.json (the updater's publishes and any manual edit). */
+let lastUpdate;
+async function lastDataChange() {
+  if (lastUpdate !== undefined) return lastUpdate;
+  try { const c = JSON.parse(sessionStorage.getItem('auksvb-updated') || 'null'); if (c && Date.now() - c.at < 6e5) return lastUpdate = c.when; } catch {}
+  try {
+    const r = await fetch(`https://api.github.com/repos/${REPO}/commits?path=dist/data.json&per_page=1`);
+    const when = r.ok ? (await r.json())[0]?.commit?.committer?.date || null : null;
+    try { sessionStorage.setItem('auksvb-updated', JSON.stringify({at: Date.now(), when})); } catch {}
+    return lastUpdate = when;
+  } catch { return lastUpdate = null; }
+}
+const etStamp = iso => new Date(iso).toLocaleString('en-US', {timeZone: 'America/New_York', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit'}) + ' ET';
+function fillUpdated() {
+  lastDataChange().then(when => {
+    if (!when) return; // keep the date-only text already shown
+    for (const el of document.querySelectorAll('[data-updated]')) el.textContent = (el.dataset.prefix ?? (el.closest('footer') ? '' : 'Results ')) + (el.closest('footer') ? 'Updated ' : 'updated ') + etStamp(when);
+  });
+}
+fillUpdated();
