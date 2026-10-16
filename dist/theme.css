@@ -290,3 +290,5 @@ body .winner-label{background:var(--green);color:#fff;border-radius:4px}
 /* Gradient numerals: paint area extends past the tight line box so glyph tops/bottoms aren't clipped */
 .record b,.next .n-count,.f-count b,.jersey,.pg-head .meta b,body :is(.roster-year,.directory-seal,.archive-stamp) strong{padding-top:.14em;padding-bottom:.12em;margin-top:-.14em;margin-bottom:-.12em}
 .next .n-count{align-self:center}
+/* Header logo: the team's dark-background A (transparent PNG), no badge behind it */
+.site-brand img{width:auto;height:40px;border-radius:0;background:none;padding:0;object-fit:contain}
