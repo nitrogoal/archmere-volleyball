@@ -46,7 +46,19 @@ document.addEventListener('click', e => {
 /* ---------- Live stream ---------- */
 // Prefer the exact broadcast (found by the updater); fall back to the school's NFHS page
 const streamHref = s => s.nfhsEventUrl || s.streamUrl || '';
-const replayLink = s => streamHref(s) ? `<a class="replay-link" href="${esc(streamHref(s))}" target="_blank" rel="noopener noreferrer">▶ Watch replay ↗</a>` : '';
+// Verified game recordings (dist/videos.json); free YouTube replays lead, NFHS (subscription) follows
+let VIDEOS = {};
+fetch('videos.json').then(r => r.ok ? r.json() : []).then(list => {
+  for (const v of list) (VIDEOS[`${v.date}|${v.opponent}`] ||= []).push(v);
+  if (D) render(false);
+}).catch(() => {});
+const videosFor = s => VIDEOS[`${s.date}|${s.opponent}`] || [];
+const replayLink = s => {
+  const v = videosFor(s)[0], n = streamHref(s);
+  if (!v && !n) return '';
+  const a = (href, label, cls = '') => `<a class="replay-link ${cls}" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+  return (v ? a(v.url, '▶ Watch replay ↗') : '') + (n ? a(n, v ? 'NFHS replay ↗' : '▶ Watch replay ↗', v ? 'alt' : '') : '');
+};
 const liveLink = s => streamHref(s) ? `<a class="live-link" href="${esc(streamHref(s))}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">●</span> Watch live ↗</a>` : '';
 
 /* ---------- Milestones ---------- */
