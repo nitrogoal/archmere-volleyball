@@ -18,6 +18,8 @@
 - Bigger changes go to the preview site first, and ship only on TJ's OK. See REFERENCE → Preview and ship.
 - Small fixes TJ asks for directly can go straight to `main`. After pushing, watch the deploy and check the live file.
 - Commit only your own files. Other sessions may share this checkout, so run `git status` first and never sweep up someone else's uncommitted work.
+- Write each decision TJ makes into SESSION-HANDOFF → Decisions in the same turn: TJ's own words, the date, and exactly what it covers. Old approvals don't carry over to new work; ask again.
+- Never stop processes, servers or tabs you didn't start.
 - QA at 320, 390 and 1280px. Design taste is in REFERENCE → Design.
 - Shell setup (Windows Git Bash):
   ```bash

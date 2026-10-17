@@ -20,6 +20,9 @@ You're picking up the Archmere Volleyball website (auksvb.com) from another Clau
 - Never commit local `dist/data.json` edits; the updater owns them.
 - Bigger changes go to the preview site first, and ship only on my OK.
 - Commit only your own files.
+- Never stop processes or servers you didn't start.
+- Write every decision I make into SESSION-HANDOFF → Decisions, in my words, the same turn I make it.
+- Treat handoff status lines older than about 6 hours as unverified until you've checked them.
 - Keep SESSION-HANDOFF current and committed after every ship or decision, and set the lock back to "none" before you stop.
 
 ---
