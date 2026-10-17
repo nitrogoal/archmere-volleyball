@@ -83,3 +83,7 @@ No paid services are used. Astra and other generators run on TJ's own account, a
 - 2026-10-17 10:45: Handoff system added and updated with Afterlight's lessons (`b73e3bc` and later).
 - 2026-10-17 10:20: Shipped `next` → main (`ff13982`).
 - 2026-10-17 09:10: Astra logo redraws live (`9b29768`). Preview Pages switched off.
+
+## Local player-photo collection — 2026-10-17, Codex
+
+User decisions: "players can have as many as possible" and "group cutouts are good too". Collection is local-only at design/player-cutouts-2026/index.html with roster.csv and collection.json. Official school 2026/2027 varsity roster verified at https://www.aukssports.com/page9861 (14 players). Saved all 14 originals from @shotbyliamo carousel DdVG-0eFGb9 and 14 transparent drafts (13 individual + one huddle). Seven roster members matched using jersey numbers; five individual draft identities pending. Multiple assets per player are supported. Generative extraction changed fine detail, so all cutouts remain drafts requiring fidelity/edge review; no claim of exact original pixels. Alpha verified for every PNG. Photographer website-use permission not recorded; nothing published. Continue searching additional game posts and confirm obscured jersey identities from captions/tags or TJ, never facial matching. Gallery browser opening was blocked for file: URLs; give the local file link rather than circumventing the restriction. No website code changed.
