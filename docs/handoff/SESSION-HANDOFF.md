@@ -24,7 +24,7 @@ TJ opens whichever Claude session or account has usage left, in this folder, and
 
 One session edits this checkout at a time. Others may read, research, or work in their own git worktree on their own branch. Only the lock holder merges or pushes to `main`.
 
-**Holder:** none. *(Format: `Holder: <session title>, taken <YYYY-MM-DD HH:MM ET>`. Commit it when you take it, and set it back to `none` when you stop.)*
+**Holder:** Archmere Volleyball pickup session, taken 2026-10-17 07:48 ET. *(Format: `Holder: <session title>, taken <YYYY-MM-DD HH:MM ET>`. Commit it when you take it, and set it back to `none` when you stop.)*
 
 **Stale lock:** if the holder's line is more than 6 hours old, its session shows idle or ended in the app, and `git status` shows no fresh edits from it, take the lock and note "force-took lock from X" in LOG.md.
 
@@ -57,6 +57,7 @@ One session edits this checkout at a time. Others may read, research, or work in
 
 ## Decisions (TJ's words, date, exact scope)
 
+- 2026-10-17 07:48: "push everything that is ready". Covers the 3 unshipped `next` commits (`592573e`, `a3f39b0`, `2408891`: stickers, inline stickers, worn logos and tags), which were on the preview but missed the 05:33 ship. Not standing approval for later work.
 - 2026-10-17: "keep these around for design use", about `design/archmere-player-cutouts-2026-batch01.zip` (player cutouts batch 01). Keep it locally for design work. This is not approval to publish any cutout on the site, and photographer permission is still unrecorded.
 - 2026-10-17: Patreece Spence is **class of 2012**. TJ chose "2012 (Recommended)" when asked "Ship Patreece Spence as class of 2012, or keep 2011?" This applies to her graduation year only.
 - 2026-10-17: "ship everything we have finished". This covered `next` as of `2408891`. It is not standing approval for future preview work.
