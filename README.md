@@ -1,5 +1,7 @@
 # Archmere Volleyball
 
+> **Working on this with Claude?** Start with [CLAUDE.md](CLAUDE.md) and [docs/handoff/SESSION-HANDOFF.md](docs/handoff/SESSION-HANDOFF.md). How-to lives in [docs/handoff/REFERENCE.md](docs/handoff/REFERENCE.md).
+
 Buildless mobile-first static website. Serve `dist/` with a static HTTP server.
 
 Data is a reviewed snapshot, not an automatic Google Sheets feed. `players.json` was read from the native Google Sheet on October 16, 2026 and includes Patreece Spence's graduation year (corrected to 2011 on October 16, then to 2012 on October 17, 2026). `prepare.py` prepares source data and verifies every career subtotal. It needs the sibling `archmere_record_book/normalized.json` archive in the original workspace; the deployed `dist/data.json` is self-contained.
@@ -18,7 +20,7 @@ Logo coverage update: all 34 opponents now have school marks. Added official spo
 
 The site is published from this repository to GitHub Pages at https://auksvb.com.
 
-- `.github/workflows/update-from-source.yml` runs every 3 hours (hourly in the evening after matches). It runs `scripts/sync-source.mjs`, which reads the official schedule (https://www.aukssports.com/page9857) and each result page by column headings, reconciles `currentSchedule`, and imports results through the safe merge in `scripts/update-results.mjs`. Only verified changes are committed; the site is then republished.
+- `.github/workflows/update-from-source.yml` runs every 20 minutes from about 4pm to 2am Eastern and hourly during the day. It runs `scripts/sync-source.mjs`, which reads the official schedule (https://www.aukssports.com/page9857) and each result page by column headings, reconciles `currentSchedule`, and imports results through the safe merge in `scripts/update-results.mjs`. Only verified changes are committed; the site is then republished.
 - Anything it will not guess (unknown names, changed columns, score mismatches, a new school year) is listed in a **Results need review** issue. A failed run opens an **Updater failing** issue and leaves the last good data live; it closes itself after the next successful run.
 - `.github/workflows/deploy-pages.yml` publishes `dist/` after the checks pass, on every push that changes the site or data.
 - Tests: `node scripts/test-sync-source.mjs` (saved official pages in `scripts/fixtures/`) and `node scripts/test-update-results.mjs`.

@@ -8,3 +8,7 @@ dist/cal/
 # Astra/AI source art and downloaded reference photos stay local; only optimized, used assets ship
 dist/brand/*
 !dist/brand/*.webp
+
+# Astra logo kit and reference images stay local; the prompt pack is kept
+design/*
+!design/*.md
