@@ -1,6 +1,6 @@
 # Session handoff: read this first (live state)
 
-**Last updated:** 2026-10-17 10:45 ET, by the "Archmere Volleyball" main session. **Last verified live:** `main` at `b73e3bc` (site code `ff13982`), deploy succeeded, live files match.
+**Last updated:** 2026-10-17 07:55 ET, by the "Archmere Volleyball pickup" session. **Last verified live:** `main` at `48ad11a`, deploy succeeded, live files match, stickers render on #schedule.
 
 Keep this file **short and current**: one to two screens. It's a dashboard, not a diary. When something closes, delete it here and add one line to [LOG.md](LOG.md). How-to lives in [REFERENCE.md](REFERENCE.md). Detailed notes for one task go in `docs/handoff/RESUME-<task>.md`, linked from "In flight".
 
@@ -24,7 +24,7 @@ TJ opens whichever Claude session or account has usage left, in this folder, and
 
 One session edits this checkout at a time. Others may read, research, or work in their own git worktree on their own branch. Only the lock holder merges or pushes to `main`.
 
-**Holder:** Archmere Volleyball pickup session, taken 2026-10-17 07:48 ET. *(Format: `Holder: <session title>, taken <YYYY-MM-DD HH:MM ET>`. Commit it when you take it, and set it back to `none` when you stop.)*
+**Holder:** none. *(Format: `Holder: <session title>, taken <YYYY-MM-DD HH:MM ET>`. Commit it when you take it, and set it back to `none` when you stop.)*
 
 **Stale lock:** if the holder's line is more than 6 hours old, its session shows idle or ended in the app, and `git status` shows no fresh edits from it, take the lock and note "force-took lock from X" in LOG.md.
 
@@ -32,7 +32,7 @@ One session edits this checkout at a time. Others may read, research, or work in
 - Never stop processes, servers or browser tabs you didn't start, such as another session's local dev server on port 8765. Use a different port instead.
 - Only the lock holder turns the preview site's Pages on or off.
 
-## Live on auksvb.com (verified 2026-10-17 10:20 ET)
+## Live on auksvb.com (verified 2026-10-17 07:55 ET)
 
 - **Player pages:** Honors and star chips from `dist/awards.json` (78 sourced honors, 38 players), plus player share cards.
 - **Share graphics:** game-day, final-score and player cards on the code-drawn poster-wall backdrop.
@@ -46,7 +46,7 @@ One session edits this checkout at a time. Others may read, research, or work in
 |---|---|---|---|---|
 | none | | | | |
 
-`next` @ `2408891` is fully merged into main. For the next preview, run `git checkout next && git merge main` first. The awards session left a `next` worktree in its scratchpad (see `git worktree list`). Remove it with `git worktree remove <path>` if it's in the way.
+`next` @ `2408891` is fully merged into main (`48ad11a`) and pushed. For the next preview, run `git checkout next && git merge main` first. The awards session left a `next` worktree in its scratchpad (see `git worktree list`). Remove it with `git worktree remove <path>` if it's in the way.
 
 ## Waiting on TJ (as of 2026-10-17 10:45 ET)
 
@@ -81,6 +81,7 @@ No paid services are used. Astra and other generators run on TJ's own account, a
 
 ## Recent (move older lines to LOG.md)
 
+- 2026-10-17 07:50: Shipped the 3 `next` commits the earlier ship missed (stickers, inline stickers, worn logos and tags) as `48ad11a`. They had never been pushed, so `ff13982` merged `next` only at `5975066`. Lesson: push `next` and check `git log origin/main..next` is empty before marking a ship done. Note: earlier timestamps in this file (10:45, 10:20, 09:10) were mislabeled; the real ET times were about 5 hours earlier.
 - 2026-10-17 10:45: Handoff system added and updated with Afterlight's lessons (`b73e3bc` and later).
 - 2026-10-17 10:20: Shipped `next` → main (`ff13982`).
 - 2026-10-17 09:10: Astra logo redraws live (`9b29768`). Preview Pages switched off.
