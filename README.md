@@ -2,7 +2,7 @@
 
 Buildless mobile-first static website. Serve `dist/` with a static HTTP server.
 
-Data is a reviewed snapshot, not an automatic Google Sheets feed. `players.json` was read from the native Google Sheet on October 16, 2026 and includes Patreece Spence's corrected 2011 graduation year. `prepare.py` prepares source data and verifies every career subtotal. It needs the sibling `archmere_record_book/normalized.json` archive in the original workspace; the deployed `dist/data.json` is self-contained.
+Data is a reviewed snapshot, not an automatic Google Sheets feed. `players.json` was read from the native Google Sheet on October 16, 2026 and includes Patreece Spence's graduation year (corrected to 2011 on October 16, then to 2012 on October 17, 2026). `prepare.py` prepares source data and verifies every career subtotal. It needs the sibling `archmere_record_book/normalized.json` archive in the original workspace; the deployed `dist/data.json` is self-contained.
 
 The two unverified Lillian Guzevich Smyrna assists remain excluded. Blank statistics remain null; zero is retained. Player source-row counts are not games played.
 
