@@ -88,6 +88,28 @@ function milestonesBlock() {
 }
 const playerMilestones = name => milestones(name).map(m => `<span class="ms-chip"><b>${fmt(m.left)}</b> ${m.cat.toLowerCase()} from ${fmt(m.next)} career${m.rank <= 10 ? ` · ${ordinal(m.rank)} all-time` : ''}</span>`).join('');
 
+/* ---------- Honors (dist/awards.json, kept outside data.json so updater refreshes never drop it) ---------- */
+let AWARDS = {};
+fetch('awards.json').then(r => r.ok ? r.json() : {}).then(a => {
+  AWARDS = a.players || {};
+  if (D) render(false);
+}).catch(() => {});
+// Newest season first; within a season, state honors before conference, then everything else, college last
+const HONOR_ORDER = [/player of the year|hall of fame/i, /all-state/i, /all-america/i, /all-conference/i, /committed|signed|played at/i];
+const honorRank = a => { const i = HONOR_ORDER.findIndex(re => re.test(a.award)); return i < 0 ? 3.5 : i; }; // unlisted honors sit between conference and college
+const honorsFor = name => (AWARDS[name] || []).slice().sort((a, b) => (b.year || 0) - (a.year || 0) || honorRank(a) - honorRank(b));
+// Hero chips: the headline honors only (Hall of Fame, All-State, All-Conference), counted by season
+const HONOR_TIERS = [['Hall of Fame', /hall of fame/i], ['All-State', /all-state/i], ['All-Conference', /all-conference/i]];
+const honorChips = name => {
+  const list = honorsFor(name);
+  return HONOR_TIERS.map(([label, re]) => { const hits = list.filter(a => re.test(a.award)); return [label, new Set(hits.filter(a => a.year).map(a => a.year)).size + hits.filter(a => !a.year).reduce((n, a) => n + (parseInt(a.award) || 1), 0)]; }).filter(([, n]) => n).slice(0, 2)
+    .map(([label, n]) => `<span class="ms-chip honor-chip"><i aria-hidden="true">★</i>${n > 1 ? `<b>${n}×</b> ` : ''}${label}</span>`).join('');
+};
+function playerHonors(name) {
+  const list = honorsFor(name); if (!list.length) return '';
+  return `<section class="player-honors" aria-label="Honors"><h2>Honors</h2><ul class="honor-list">${list.map((a, i) => `<li><span class="h-year${i && list[i - 1].year === a.year ? ' same' : ''}">${a.year ? esc(a.year) : '—'}</span><span class="h-what"><b>${esc(a.award)}</b><small>${esc(a.org)}</small></span>${a.url ? `<a class="h-src" href="${esc(a.url)}" target="_blank" rel="noopener noreferrer" aria-label="Source for ${esc(a.award)}"><span>Source</span> ↗</a>` : ''}</li>`).join('')}</ul></section>`;
+}
+
 /* ---------- Head-to-head ---------- */
 function h2h(name) {
   const gs = D.games.filter(g => g.opponent === name).sort((a, b) => serial(b.date) - serial(a.date));
