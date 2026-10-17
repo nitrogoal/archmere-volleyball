@@ -57,6 +57,7 @@ One session edits this checkout at a time. Others may read, research, or work in
 
 ## Decisions (TJ's words, date, exact scope)
 
+- 2026-10-17: "keep these around for design use", about `design/archmere-player-cutouts-2026-batch01.zip` (player cutouts batch 01). Keep it locally for design work. This is not approval to publish any cutout on the site, and photographer permission is still unrecorded.
 - 2026-10-17: Patreece Spence is **class of 2012**. TJ chose "2012 (Recommended)" when asked "Ship Patreece Spence as class of 2012, or keep 2011?" This applies to her graduation year only.
 - 2026-10-17: "ship everything we have finished". This covered `next` as of `2408891`. It is not standing approval for future preview work.
 - 2026-10-16: "Leave the preview repo there; it might be useful for future previews." Keep `nitrogoal/archmere-volleyball-preview`, with Pages off between uses.
@@ -74,6 +75,7 @@ No paid services are used. Astra and other generators run on TJ's own account, a
 
 - `design/` (except `*.md`): the Astra logo kit (`logo-refs/`, `logo-redraws/` with its zip), `poster-wall-reference.jpg` and `preview.html`.
 - `dist/brand/*` except `*.webp`: draft and source art and reference photos.
+- `design/player-cutouts-2026/` and its snapshot `design/archmere-player-cutouts-2026-batch01.zip` (identical as of 2026-10-17 06:20 ET): 2026 player cutout drafts, source photos and a gallery (`index.html`). Kept for design use; see Decisions.
 - Outputs land inside this project, or in `%TEMP%\auksvb-*` for scratch work. Don't go looking for project files elsewhere.
 
 ## Recent (move older lines to LOG.md)
