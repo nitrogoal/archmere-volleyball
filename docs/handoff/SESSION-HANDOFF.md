@@ -57,6 +57,7 @@ One session edits this checkout at a time. Others may read, research, or work in
 
 ## Decisions (TJ's words, date, exact scope)
 
+- 2026-10-17 20:05: "close the stale Caravel review issue with a note that the game was imported at 12:56pm". Covers issue #1 (game 404446) only.
 - 2026-10-17 07:48: "push everything that is ready". Covers the 3 unshipped `next` commits (`592573e`, `a3f39b0`, `2408891`: stickers, inline stickers, worn logos and tags), which were on the preview but missed the 05:33 ship. Not standing approval for later work.
 - 2026-10-17: "keep these around for design use", about `design/archmere-player-cutouts-2026-batch01.zip` (player cutouts batch 01). Keep it locally for design work. This is not approval to publish any cutout on the site, and photographer permission is still unrecorded.
 - 2026-10-17: Patreece Spence is **class of 2012**. TJ chose "2012 (Recommended)" when asked "Ship Patreece Spence as class of 2012, or keep 2011?" This applies to her graduation year only.
@@ -81,6 +82,7 @@ No paid services are used. Astra and other generators run on TJ's own account, a
 
 ## Recent (move older lines to LOG.md)
 
+- 2026-10-17 20:05: Closed needs-review #1 (Caravel 10/15, imported by the updater in `1ddb67a`). A one-off HTTP 403 from aukssports.com at 19:26 ET opened "Updater failing" #2, which closed itself at 19:47.
 - 2026-10-17 07:50: Shipped the 3 `next` commits the earlier ship missed (stickers, inline stickers, worn logos and tags) as `48ad11a`. They had never been pushed, so `ff13982` merged `next` only at `5975066`. Lesson: push `next` and check `git log origin/main..next` is empty before marking a ship done. Note: earlier timestamps in this file (10:45, 10:20, 09:10) were mislabeled; the real ET times were about 5 hours earlier.
 - 2026-10-17 10:45: Handoff system added and updated with Afterlight's lessons (`b73e3bc` and later).
 - 2026-10-17 10:20: Shipped `next` → main (`ff13982`).
