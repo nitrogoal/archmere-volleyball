@@ -1,6 +1,6 @@
 # Session handoff: read this first (live state)
 
-**Last updated:** 2026-10-17 07:55 ET, by the "Archmere Volleyball pickup" session. **Last verified live:** `main` at `48ad11a`, deploy succeeded, live files match, stickers render on #schedule.
+**Last updated:** 2026-10-28 04:55 ET, by the "Archmere Volleyball pickup" session. **Last verified live:** `main` at `8625026`, deploy succeeded, live `data.json` and `index.html` match.
 
 Keep this file **short and current**: one to two screens. It's a dashboard, not a diary. When something closes, delete it here and add one line to [LOG.md](LOG.md). How-to lives in [REFERENCE.md](REFERENCE.md). Detailed notes for one task go in `docs/handoff/RESUME-<task>.md`, linked from "In flight".
 
@@ -24,7 +24,7 @@ TJ opens whichever Claude session or account has usage left, in this folder, and
 
 One session edits this checkout at a time. Others may read, research, or work in their own git worktree on their own branch. Only the lock holder merges or pushes to `main`.
 
-**Holder:** Archmere Volleyball pickup session, taken 2026-10-28 04:46 ET. *(Format: `Holder: <session title>, taken <YYYY-MM-DD HH:MM ET>`. Commit it when you take it, and set it back to `none` when you stop.)*
+**Holder:** none. *(Format: `Holder: <session title>, taken <YYYY-MM-DD HH:MM ET>`. Commit it when you take it, and set it back to `none` when you stop.)*
 
 **Stale lock:** if the holder's line is more than 6 hours old, its session shows idle or ended in the app, and `git status` shows no fresh edits from it, take the lock and note "force-took lock from X" in LOG.md.
 
@@ -44,7 +44,7 @@ One session edits this checkout at a time. Others may read, research, or work in
 
 | What | Owner session | Branch @ head | State (time) | Next |
 |---|---|---|---|---|
-| none | | | | |
+| Newark Charter 10/27 stats (issue #6) | updater | `main` | Score only, L 2-3 (2026-10-28 04:50) | The result page has only Newark's table. Updater rechecks; close #6 when Archmere stats land or the school clearly won't post them. |
 
 `next` @ `2408891` is fully merged into main (`48ad11a`) and pushed. For the next preview, run `git checkout next && git merge main` first. The awards session left a `next` worktree in its scratchpad (see `git worktree list`). Remove it with `git worktree remove <path>` if it's in the way.
 
@@ -83,6 +83,7 @@ No paid services are used. Astra and other generators run on TJ's own account, a
 
 ## Recent (move older lines to LOG.md)
 
+- 2026-10-28 04:50: Added Newark Charter 10/27 as score only (`8625026`, via `update-results.mjs`); issue #6 left open. Updater 403 blips from aukssports.com opened and auto-closed #3, #4 and #5 between 10/19 and 10/27.
 - 2026-10-17 20:05: Closed needs-review #1 (Caravel 10/15, imported by the updater in `1ddb67a`). A one-off HTTP 403 from aukssports.com at 19:26 ET opened "Updater failing" #2, which closed itself at 19:47.
 - 2026-10-17 07:50: Shipped the 3 `next` commits the earlier ship missed (stickers, inline stickers, worn logos and tags) as `48ad11a`. They had never been pushed, so `ff13982` merged `next` only at `5975066`. Lesson: push `next` and check `git log origin/main..next` is empty before marking a ship done. Note: earlier timestamps in this file (10:45, 10:20, 09:10) were mislabeled; the real ET times were about 5 hours earlier.
 - 2026-10-17 10:45: Handoff system added and updated with Afterlight's lessons (`b73e3bc` and later).
