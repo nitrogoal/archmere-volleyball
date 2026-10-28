@@ -24,7 +24,7 @@ TJ opens whichever Claude session or account has usage left, in this folder, and
 
 One session edits this checkout at a time. Others may read, research, or work in their own git worktree on their own branch. Only the lock holder merges or pushes to `main`.
 
-**Holder:** none. *(Format: `Holder: <session title>, taken <YYYY-MM-DD HH:MM ET>`. Commit it when you take it, and set it back to `none` when you stop.)*
+**Holder:** Archmere Volleyball pickup session, taken 2026-10-28 04:46 ET. *(Format: `Holder: <session title>, taken <YYYY-MM-DD HH:MM ET>`. Commit it when you take it, and set it back to `none` when you stop.)*
 
 **Stale lock:** if the holder's line is more than 6 hours old, its session shows idle or ended in the app, and `git status` shows no fresh edits from it, take the lock and note "force-took lock from X" in LOG.md.
 
@@ -57,6 +57,7 @@ One session edits this checkout at a time. Others may read, research, or work in
 
 ## Decisions (TJ's words, date, exact scope)
 
+- 2026-10-28 04:46: "Add the 10/27 Newark Charter result as score only (L 2-3, set scores), keep issue #6 open, and let the updater pick up Archmere's stats if the school posts them." Covers game 404222 only: result, score and set scores, no player stats.
 - 2026-10-17 20:05: "close the stale Caravel review issue with a note that the game was imported at 12:56pm". Covers issue #1 (game 404446) only.
 - 2026-10-17 07:48: "push everything that is ready". Covers the 3 unshipped `next` commits (`592573e`, `a3f39b0`, `2408891`: stickers, inline stickers, worn logos and tags), which were on the preview but missed the 05:33 ship. Not standing approval for later work.
 - 2026-10-17: "keep these around for design use", about `design/archmere-player-cutouts-2026-batch01.zip` (player cutouts batch 01). Keep it locally for design work. This is not approval to publish any cutout on the site, and photographer permission is still unrecorded.
