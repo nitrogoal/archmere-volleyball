@@ -277,11 +277,11 @@
     "year": 2028,
     "note": "Expected from published grades",
     "values": [
-      223,
+      242,
       4,
       12,
-      115,
-      3
+      120,
+      4
     ],
     "id": "brooke-maddox"
   },
@@ -329,10 +329,10 @@
     "year": 2028,
     "note": "Expected from published grades",
     "values": [
-      98,
+      107,
       4,
-      24,
-      72,
+      29,
+      74,
       7
     ],
     "id": "caroline-hahn"
@@ -459,11 +459,11 @@
     "year": 2030,
     "note": "Expected from published grades",
     "values": [
-      48,
-      13,
-      19,
-      26,
-      null
+      54,
+      14,
+      21,
+      27,
+      1
     ],
     "id": "elise-shahan"
   },
@@ -576,10 +576,10 @@
     "year": 2027,
     "note": "Expected from published grades",
     "values": [
-      566,
+      583,
       8,
-      47,
-      88,
+      48,
+      92,
       13
     ],
     "id": "grace-mahoney"
@@ -888,11 +888,11 @@
     "year": 2027,
     "note": "Expected from published grades",
     "values": [
-      295,
-      129,
-      44,
-      435,
-      1115
+      317,
+      130,
+      46,
+      454,
+      1156
     ],
     "id": "lillian-guzevich"
   },
@@ -954,10 +954,10 @@
     "note": "Expected from published grades",
     "values": [
       4,
-      56,
+      61,
       null,
-      388,
-      42
+      405,
+      43
     ],
     "id": "madeline-frampton"
   },
@@ -1057,11 +1057,11 @@
     "year": 2027,
     "note": "Expected from published grades",
     "values": [
-      4,
-      46,
+      5,
+      50,
       null,
-      194,
-      18
+      211,
+      20
     ],
     "id": "michaela-iacono"
   },
@@ -1096,11 +1096,11 @@
     "year": 2028,
     "note": "Expected from published grades",
     "values": [
-      17,
-      65,
+      18,
+      67,
       null,
-      353,
-      60
+      375,
+      73
     ],
     "id": "olivia-borsello"
   },
@@ -1317,11 +1317,11 @@
     "year": 2030,
     "note": "Expected from published grades",
     "values": [
-      84,
+      95,
       1,
-      37,
+      46,
       11,
-      2
+      3
     ],
     "id": "vivian-guzevich"
   },
@@ -1331,10 +1331,10 @@
     "note": "Expected from published grades",
     "values": [
       10,
-      38,
+      40,
       null,
-      119,
-      288
+      132,
+      313
     ],
     "id": "vivienne-govatos"
   },
